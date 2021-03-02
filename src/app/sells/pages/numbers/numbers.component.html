@@ -1,0 +1,92 @@
+<div class="text-layout">
+    <h1>Angular Pipes - Numbers</h1>
+    <h2>Decimal</h2>
+    <p>Pipes included in Angular - CommonModule</p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-12 p-md-6">
+        <p-card>
+            <ul>
+                <li>sells</li>
+                <li>sells | number <i class="pi pi-dollar"></i></li>
+                <li>sells | number: '1.2-2' <i class="pi pi-dollar"></i></li>
+                <li>sells | number: '1.2-4' <i class="pi pi-dollar"></i></li>
+                <li>sells | number: '1.2-4' : 'en' <i class="pi pi-dollar"></i></li>
+                <li>sells | number: '1.2-4' : 'fr' <i class="pi pi-dollar"></i></li>
+            </ul>
+        </p-card>
+    </div>
+    <div class="p-col-12 p-md-6">
+        <p-card>
+            <ul>
+                <li>{{sells}}</li>
+                <li>{{sells | number}} <i class="pi pi-dollar"></i> </li>
+                <li>{{sells | number: '1.2-2'}} <i class="pi pi-dollar"></i> </li>
+                <li>{{sells | number: '1.2-4'}} <i class="pi pi-dollar"></i> </li>
+                <li>{{sells | number: '1.2-4' : 'en'}} <i class="pi pi-dollar"></i> </li>
+                <li>{{sells | number: '1.2-4' : 'fr'}} <i class="pi pi-dollar"></i> </li>
+            </ul>
+        </p-card>
+    </div>
+</div>
+
+<div class="text-layout">
+    <h2>Currency</h2>
+    <p>Pipes included in Angular - CommonModule</p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-12 p-md-6">
+        <p-card>
+            <ul>
+                <li>sells</li>
+                <li>sells | currency </li>
+                <li>sells | currency: 'EUR' </li>
+                <li>sells | currency: 'USD' </li>
+                <li>sells | currency: 'USD' : 'symbol-narrow' </li>
+                <li>sells | currency: 'USD' : 'symbol-narrow': '1.4-4' </li>
+                <li>sells | currency: 'USD' : 'symbol-narrow': '1.4-4': 'en' </li>
+            </ul>
+        </p-card>
+    </div>
+    <div class="p-col-12 p-md-6">
+        <p-card>
+            <ul>
+                <li>{{sells}}</li>
+                <li>{{sells | currency}}</li>
+                <li>{{sells | currency: 'EUR'}}</li>
+                <li>{{sells | currency: 'USD'}}</li>
+                <li>{{sells | currency: 'USD':'symbol-narrow'}}</li>
+                <li>{{sells | currency: 'USD':'symbol-narrow':'1.4-4'}}</li>
+                <li>{{sells | currency: 'USD':'symbol-narrow':'1.4-4':'en'}}</li>
+            </ul>
+        </p-card>
+    </div>
+</div>
+
+<div class="text-layout">
+    <h2>Percent</h2>
+    <p>Pipes included in Angular - CommonModule</p>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-12 p-md-6">
+        <p-card>
+            <ul>
+                <li>percent</li>
+                <li>percent | percent</li>
+                <li>percent | percent: '2.2-2'</li>
+            </ul>
+        </p-card>
+    </div>
+    <div class="p-col-12 p-md-6">
+        <p-card>
+            <ul>
+                <li>{{percent}}</li>
+                <li>{{percent | percent}}</li>
+                <li>{{percent | percent: '2.2-2'}}</li>
+            </ul>
+        </p-card>
+    </div>
+</div>
