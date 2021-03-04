@@ -6,13 +6,92 @@
 
 <div class="p-grid">
     <div class="p-col-12 p-md-6">
-        <p-fieldset legend="i18nSelect" [toggleable]="true">
-            Content
+        <p-fieldset legend="i18nSelect" [toggleable]="true" [collapsed]="true">
+            <p *ngFor="let person of people">
+                Bienvenido {{person.name}}, nos gustaría {{person.gender | i18nSelect: obj_map}} a nuestro evento
+            </p>
         </p-fieldset>
     </div>
     <div class="p-col-12 p-md-6">
-        <p-fieldset legend="i18nPlural" [toggleable]="true">
-            Content
+        <p-fieldset legend="i18nPlural" [toggleable]="true" [collapsed]="true">
+            <p>Actualmente {{people.length | i18nPlural: obj_map_plural}}</p>
+        </p-fieldset>
+    </div>
+</div>
+
+<div class="text-layout">
+    <h3>Practical Demo</h3>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-12 p-md-6">
+        <p-fieldset legend="i18nSelect" [toggleable]="true" [collapsed]="true">
+            <p>
+                Bienvenido {{ex_name}}, nos gustaría {{ex_gender | i18nSelect: obj_map}} a nuestro evento
+            </p>
+            <button pButton (click)="change_person()" icon="pi pi-user" type="button" label="Change Person"
+                class="p-button-outlined p-button-success">
+            </button>
+        </p-fieldset>
+    </div>
+    <div class="p-col-12 p-md-6">
+        <p-fieldset legend="i18nPlural" [toggleable]="true" [collapsed]="true">
+            <p>Actualmente {{clients.length | i18nPlural: obj_map_plural}}</p>
+            <button pButton (click)="delete_person()" icon="pi pi-user-minus" type="button" label="Delete Client"
+                class="p-button-outlined p-button-warning">
+            </button>
+            <p *ngIf="deleted_client">Cliente: {{deleted_client}} - eliminado</p>
+        </p-fieldset>
+    </div>
+</div>
+
+<div class="text-layout">
+    <h2>Slice & KeyValue</h2>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-12 p-md-6">
+        <p-fieldset legend="Slice" [toggleable]="true" [collapsed]="true">
+            <b>Original</b>
+            <pre>{{ clients }}</pre>
+            <b>slice : 0 : 2</b>
+            <pre>{{ clients | slice : 0 : 2 }}</pre>
+            <b>slice : 0 : 4</b>
+            <pre>{{ clients | slice : 0 : 4 }}</pre>
+            <b>slice : 2 : 4</b>
+            <pre>{{ clients | slice : 2 : 4 }}</pre>
+            <b>slice : 3 : 4</b>
+            <pre>{{ clients | slice : 3 : 4 }}</pre>
+        </p-fieldset>
+    </div>
+
+    <div class="p-col-12 p-md-6">
+        <p-fieldset legend="KeyValue" [toggleable]="true" [collapsed]="true">
+            <ul>
+                <li *ngFor="let item of example_object | keyvalue">
+                    <b>{{ item.key | titlecase }}</b>: {{item.value}}
+                </li>
+            </ul>
+        </p-fieldset>
+    </div>
+</div>
+
+<div class="text-layout">
+    <h2>Json & Async</h2>
+</div>
+
+<div class="p-grid">
+    <div class="p-col-12 p-md-6">
+        <p-fieldset legend="Json" [toggleable]="true" [collapsed]="true">
+            <pre>{{ example_array | json }}</pre>
+        </p-fieldset>
+    </div>
+
+    <div class="p-col-12 p-md-6">
+        <p-fieldset legend="Async" [toggleable]="true" [collapsed]="true">
+            <pre>{{ example_observable | async }}</pre>
+            <pre *ngIf="!(example_promise | async)" >Waiting promise</pre>
+            <pre>{{ example_promise | async }}</pre>
         </p-fieldset>
     </div>
 </div>

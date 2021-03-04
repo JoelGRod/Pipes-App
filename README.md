@@ -1,5 +1,9 @@
 # Pipes-App
 
+This is a test application showing Angular pipes using PrimeNg's stylized components.
+
+Based on the projects by Fernando Herrera - https://www.udemy.com/course/angular-fernando-herrera/
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.1.1.
 
 ## Development server
